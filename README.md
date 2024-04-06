@@ -15,6 +15,7 @@
 10. [Suggestions for Improvements](#user-content-suggestions-for-improvements)
 11. [Useful Online Tools](#user-content-useful-online-tools)
 12. [Resources and Inspirations](#user-content-resources-and-inspirations)
+13. [Acknowledgements](#user-content-acknowledgements)
 
 
 ## Project Importance
@@ -213,4 +214,14 @@ The second useful online tool I used for this project was this [Flight Path Pred
 
 ## Resources and Inspirations
 
+The biggest inspriation that I found that helped immensely with conducting this project and designing this github for other interested individual and future engineering students was a fellow individual by the name of [blazerunner44](https://github.com/blazerunner44/Arduino-High-Altitude-Balloon?tab=readme-ov-file#user-content-balloon-payload). I loved the work he did and I tried my best to emulate his project despite my more limited skillset
 
+## Acknowledgements
+
+- A big thank you to our faculty advisor for this project. I figure I won't put his name on here out of respect for his privacy, but he knows who he is and he was an incredible resource to turn to. I hope he conducts this project or something similar in the future, I think future students in the department would really enjoy what he would offer!
+- Thank you to our course advisor for this project. Again, I won't put his name on here also out of respect for his privacy, but he was very helpful for keeping us on track and teaching us vital skills required to join the workforce in the near future
+- Thank you to our GTA, he was super nice and helpful when we approached him with questions
+- Thank you to BALLOONIACS, if it wasn't for their company we wouldn't have been able to get helium in time and get our project off the ground (literally)!
+- Thank you to my parents, grandparents, sibling, and girlfriend. You all were a major source of support throughout my education as you very well know and I greatly appreciate it. I wouldn't have been able to make it to where I am today without you all.
+- Monster Energy Drinks and Redbull. Caffeine is the only thing that got me through all my coursework. I spent plenty of all nighters getting this project to where it ended up and it was because of these bad boys I was able to do so.
+  
