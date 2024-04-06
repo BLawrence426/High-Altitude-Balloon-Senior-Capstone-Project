@@ -3,12 +3,12 @@
 ## WORK IN PROGRESS
 
 ## Contents
-1. [Project Importance](#user-content-importance)
-2. [Every Parts List](#user-content-each-parts-list)
-3. [Payload Construction](#user-content-balloon-payload-construction)
-4. [Payload Arduino Code](#user-content-balloon-payload-arduino-code)
-5. [Tracking Receiver Construction](#user-content-balloon-tracking-receiver-construction)
-6. [Tracking Reciever Code](#user-content-balloon-tracking-receiver-code)
+1. [Project Importance](#user-project-importance)
+2. [Every Parts List](#user-every-parts-list)
+3. [Payload Construction](#user-content-payload-construction)
+4. [Payload Arduino Code](#user-content-payload-arduino-code)
+5. [Tracking Receiver Construction](#user-content-tracking-receiver-construction)
+6. [Tracking Reciever Code](#user-content-tracking-receiver-code)
 7. [Launch Protocol](#user-content-launch-protocol)
 8. [Data Results](#user-content-data-results)
 9. [Photo Results](#user-content-photo-results)
@@ -16,7 +16,7 @@
 11. [Resources and Inspirations](#user-content-resources-and-inspirations)
 
 
-## <a name="Project Importance"></a>Project Importance
+## Project Importance
 For my senior year of college at The Ohio State University, we were assigned a capstone group tasked with completing a year-long project. There were a variety of topics we could possibly be assigned; from creating a workbench meant for Starlab to conducting research for both the Navy and Airforce to creating a cost-effective high-altitude balloon (HAB) using off-the-shelf components. Can you guess which one I was assigned?
 
 For more context on the reason behind this project, the first aerospace engineering course (AERO 2200: Introduction to Aerospace Engineering) that each new, bright-eyed sophmore in the major takes will conduct a high-altitude balloon lab at one point. This lab involves a launch of a high-altitude balloon by the professor and other academic faculty in order to collect atmospheric data such as ambient temperature and pressure in order to be analyzed by the students. The purpose for this lab is to teach the students the standard atmosphere (specifically, how air pressure, temperature, and density changes with altitude).
