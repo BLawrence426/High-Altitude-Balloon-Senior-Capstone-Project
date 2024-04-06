@@ -8,12 +8,13 @@
 3. [Payload Construction](#user-content-payload-construction)
 4. [Payload Arduino Code](#user-content-payload-arduino-code)
 5. [Tracking Receiver Construction](#user-content-tracking-receiver-construction)
-6. [Tracking Receiver Code](#user-content-tracking-receiver-code)
+6. [Tracking Receiver Arduino and MATLAB Code](#user-content-tracking-receiver-code)
 7. [Launch Protocol](#user-content-launch-protocol)
 8. [Data Results](#user-content-data-results)
 9. [Photo Results](#user-content-photo-results)
-10. [Useful Online Tools](#user-content-useful-online-tools)
-11. [Resources and Inspirations](#user-content-resources-and-inspirations)
+10. [Suggestions for Improvements](#user-content-suggestions-for-improvements)
+11. [Useful Online Tools](#user-content-useful-online-tools)
+12. [Resources and Inspirations](#user-content-resources-and-inspirations)
 
 
 ## Project Importance
@@ -44,6 +45,7 @@ In prior years, including my sophmore year, there were a multitude of issues wit
 | [Wire](https://www.amazon.com/TUOFENG-Hookup-Wires-6-Different-Colored/dp/B07TX6BX47/ref=sr_1_5?crid=NNRZ3R0UF2AV&dib=eyJ2IjoiMSJ9.0is0xfeGIMj9TEgcksIBU7bGdorlTXp3CnIU7qXzmx2dzsyDk5-KXR7JvmXlGoxVo1-p3-CN4jLwv4Q6WifFNXuOrQSh4m3oRF5_TrrPMlc9JCKN9CxpW9_rEPN7m7dwT_viu9ogbmfW5e6gx9oe-QM14YnQPp0oUnCF_05S7mYPApGYscha5KGazwYaku479gs5WjsOMTd-qg9L6fSTKgNFE1OpgR1hwea-UJXJ7NdqkfzJbsQtL-XWP1g-Xjmu70rXQw5K3yo8YZiS5ndDL8Ckhf3yE0bvEQX-f2eCjDU.D8oWhY3Usn-Y6cDyZqv1NnRN4Q50iJuPO1Z4LlxiDcg&dib_tag=se&keywords=electronic%2Bwire&qid=1712353019&sprefix=electronic%2Bwire%2Caps%2C92&sr=8-5&th=1) | For connecting everything together. I'm weird and I really like color coordinating all my wires so I don't blow anything up. Obviously can be omitted from parts if you already have some.  | $14.99 | 1 | $14.99 |
 | [Solder](https://www.amazon.com/Rosin-Solder-Electrical-Soldering-JWOWO/dp/B0C7KZF11F/ref=sr_1_7?crid=36X64DBZHL5KC&dib=eyJ2IjoiMSJ9.MbBrySFnx_k0V7AZHV1pQE62uzTa27JHEwMwVz-APvkHmmLqOOaTfkgiHnUilMSK-_5oKAWs5NAiGg-h8BYfMF0gTlyAySK3RLkThuMPfuGtJ82RVq71xyI4DVZ4LnBG32OKAQU_0qumvB6jdr9jFD2kdqXbBUOoszQqTBM6iS-NSFSnIMm8sn_TIQZXfnHHQjuuCqGF9S_TzuVZ8lC4tGYguRTZlpntlwnfAQrPfefrLB4Uy3sDtsUdEMVEacvR3OuHpoSlVMpMioOsx0YIBogus4bC1OlohDv0OcjS5z4.tSYIBs8r1n9v2yp-_3TMlIXahJP6XZi8GSmN4-Hg2sM&dib_tag=se&keywords=electronic%2Bsolder&qid=1712353156&sprefix=electronic%2Bsolder%2Caps%2C92&sr=8-7&th=1) | For connecting everything together. I highly, HIGHLY recommend soldering everything together. The jetstreams up above can get pretty nasty and really put your payload through the wringer. | $7.99 | 1 | $7.99 |
 | [SUSB Type-C Charging Module](https://www.amazon.com/Charging-Lithium-Battery-Charger-Protection/dp/B08X6G26Q8/ref=sr_1_3_pp?crid=108Z5U9FF23Y4&dib=eyJ2IjoiMSJ9.fAUmfmscQ6Pn4nR4irzgjaW-BmEPFZRilyTIfolN2ZKrHE1xFFHvcrgYH1FbPZ4ZwN33Ro_jvjlRG20cZn2P_7A3nOISCR8vbYlPK5yVDIb3AyMYoCkwArL0v9ERxR7vd2OjYBHcHwozYBuBt8PHClauOuc6YMY6f8tyCEdicWlGL-8Y09E8hIhj3-GnLkQ2l-Sh_JN5Ujm2gjcRprm6EMHH6ftQauurUeYVSRlCkjQ.iTSouIKTAqJjP72HNWBgcTTMaegfSwn3LCHg_xKcd8M&dib_tag=se&keywords=USB%2Bc%2Bbattery%2Bcharging%2Bboard&qid=1712365314&sprefix=usb%2Bc%2Bbattery%2Bcharging%2Bboar%2Caps%2C92&sr=8-3&th=1) | I noticed some issues with connecting the battery & switch directly to the battery connecter on the Arduino. So I attached one of these to the batteries to make sure it would be fully charged before the flight. | $7.99 | 1 | $7.99 |
+| [0.96 Inch OLED Display](https://www.amazon.com/GeeekPi-SSD1306-Display-Arduino-Raspberry/dp/B0833PF7ML/ref=sr_1_4?crid=W3TQ27L7971Z&dib=eyJ2IjoiMSJ9.pqayzekglP-CFKqGl475BarNv4qta3sNXqiJ-XgFOXo_6MguOTd2p7c_5yymtUZFO_00Ifd-UBQBI1zu1_jVm8SKWBWDAqVHmIgy2aKZKsjwLCC0AZOr4-s0bj58WyTYUScT9p6tMWcHqeSI6iesuaohbZaZDUp3rep16x5bp-HTkqt49Fm8KmH_h7nXHYlq1DCipw4_cNA3h7TPZSYtZ1V45kUpzs6zwFHCzEaW0R4.fEpvt7CiJtHAQUVrNv7jMt9g_bO33qfQN5oLGgeAMlg&dib_tag=se&keywords=arduino+mini+oled+display&qid=1712369543&sprefix=arduino+mini+oled+display%2Caps%2C93&sr=8-4) | Used on the tracking receiver to display the HAB's current latitude, longitude, and altitude. | $14.99 | 1 | $14.99 |
 
 ### Launch Equipment List
 
@@ -83,8 +85,8 @@ In prior years, including my sophmore year, there were a multitude of issues wit
 ### Miscellaneous Equipment List
 |Equipment|Description|Price|Amount|Total Cost|
 | ------ | ------------ | ------ | ------ | ------ |
-| [Scissors](https://www.walmart.com/ip/Scotch-8-inch-Multi-Purpose-Stainless-Steel-Scissors/19675467?athbdg=L1102&from=/search) | Used this for attaching the bubble wrap to the styrofoam shell | $3.62 | 1 | $3.62 |
-| [Side Cutters](https://www.menards.com/main/tools/hand-tools/pliers-plier-sets/micro-flush-cutter/cwcmf/p-1444421187059-c-9156.htm?exp=false) | Used this for attaching the bubble wrap to the styrofoam shell | $3.55 | 1 | $3.55 |
+| [Scissors](https://www.walmart.com/ip/Scotch-8-inch-Multi-Purpose-Stainless-Steel-Scissors/19675467?athbdg=L1102&from=/search) | Used this for cutting bubble wrap and paracord | $3.62 | 1 | $3.62 |
+| [Side Cutters](https://www.menards.com/main/tools/hand-tools/pliers-plier-sets/micro-flush-cutter/cwcmf/p-1444421187059-c-9156.htm?exp=false) | Used this for cutting paracord and zip ties | $3.55 | 1 | $3.55 |
 | [Small Zip Ties](https://www.walmart.com/ip/Hyper-Tough-4inch-Cable-Tie-Uv-Black-100Pcs/440215826?athbdg=L1102&from=/search) | Used these for, albeit rough, cable management of thepayload electronics | $3.22 | 1 | $3.22 |
 | [Electrical Tape](https://www.walmart.com/ip/Hyper-Tough-50ft-Vinyl-Electrical-Tape-3-4-0-43lbs-Black-3-Pack-34366/191038268?athbdg=L1200&from=/search) | Used this for wire insulation and wrapping the PVC pipe used in the filling valve | $2.13 | 1 | $2.13 |
 | [Lighter](https://www.walmart.com/ip/Ozark-Trail-Multipurpose-BBQ-Lighter-Red-and-Black-2-Pack/1450295214?athbdg=L1200&from=/search) | Used for melting the cut ends of paracord so they don't keep fraying and coming | $2.24 | 1 | $2.24 |
@@ -92,19 +94,116 @@ In prior years, including my sophmore year, there were a multitude of issues wit
 
 ## Payload Construction
 
+When designing our HAB payload, the biggest fear that we needed to resolve was the absolute beating our payload electronics were expected to endure during a test flight. The jetstreams up above can get pretty nasty and put an absolute beating on our payload, so making sure that every component was a) soldered together and b) held down in some fashion was important to ensuring nothing would come loose and possibly short out the entire payload electronic system. Likewise, we wanted our payload to remain light (Under 2 pounds total, but preferably less) for safety reasons. So in conclusion, these three main considerations is what drove our design for what we are calling our payload chassis:
+
+<INSERT PICTURE OF PAYLOAD CHASSIS! >
+
+This chassis was 3D printed on my Ender 3 Pro printer using blach hatchbox PLA. Chamfers were placed in as many locations as possible in order to cut-down on support material and decrease the printing time. Likewise, 10% infill was used but with 4 walls in order to help with strength and rigidity.
+
+Though its hard to see, I tried my best to remove as much unecessary material as possible while also providing ample mounting locations for each and every one of our electronics. The little holes seen all around our payload chassis are locations to melt threaded brass inserts into which provide locations that each part can be screwed down into. Similarly, I also tried putting a bunch of slots all around the chassis so zip ties could be passed through in order to hold everything into place. Our final designed had the Arduino MKR WAN 1310, micro-SD card board, RTC board, pressure sensor, and small perf boards screwed down and the wires, battery cell, antenna, and handwarmer zip tied to the chassis. The only odd methods out for mounting components onto our payload chassis were the ESP32-CAM board and the GPS shield. The GPS shield was insertted onto the top of the Arduino MKR WAN 1310 board and then hot-glued down to keep it from coming apart or shifting during flight. And then the camera was insertted into its own clam-shell case that was epoxied into a dedicated space on the chassis. This [clamshell case](https://www.thingiverse.com/thing:4251986) was designed by the username dandesc on Thingiverse.com and I decided to adapt it to work with our project. I belived this was a quicker way to provide a dedicated space for the camera to mount to while also making replacing it in the future if needed easy as well.
+
+My mindset for going this route instead of just saying fuck it and epoxying or glueing all the components down was due to my desire to make each component easily replaceable if need be. I figure at some point a sensor or component will be damaged upon impact, so I figured I would try my best to future proof our mounting methods for each component. Plust it helped me with debugging things when I was assembling it all together and needed to address a weak connection to a component.
+
+Likewise, when desinging our HAB payload, we did extensive online research and found a variety of individuals who posted their own HAB payload designs. The one design decision that was seen in all the ones we found was the use of an outer-styrofoam shell. These shells ranged from using small, disposable styrofoam coolers to even floral arrangement foam that was hallowed out. We decided to go a slightly different route and use 1/2 inch rigid foam insulation board and create an outer shell of this material that would go around our 3D printed chassis. A picture of our final styrofoam shell can be seen below:
+
+<INSERT A PICTURE OF THE STYROFOAM SHELL! >
+
+And then just to give us a bit more ease of mind with our payload, we decided to wrapp it in several layers of bubble wrap in order to help cushion the impact force just incase our payload would happen to hit someones property.
+
+<INSERT A PICTURE OF THE BUBBLE WRAPPED SHELL! >
+
 ## Payload Arduino Code
 
-So this was my first big project that utilized Arduino and the coding language so I apologize upfront if my code looks terrible. I know it's not as optimized as it could be, but I made sure to comment it as best as possible so everyone can follow it.
+Disclaimer, but this was my first big project that utilized Arduino and the coding language so I apologize upfront if my code looks terrible. I know it's not as optimized as it could be, but I made sure to comment it as best as possible so everyone can follow it. Below I'll try to explain what the code does:
+
+Firstly, the [Payload Arduino Code](Payload-Arduino-Code) is broken up into two files: the main arduino code and the camera code. The main arduino code is what gets the current interior payload temperature, exterior ambient temperature, ambient pressure, GPS data (latitude and longitude), and date/time and both saves the data to the backup micro-SD card and transmit packets of data via the on-board LoRa WAN module in .csv format. Furthermore, this code also communicates with the ESP32-CAM and tells it when to take a photo (every 30 seconds). So then on the flipside, the camera code waits until it receives a trigger from the main arduino board that tells it to take a photo. 
+
+The reason for the odd way of integrating the ESP32-CAM to communicate with the Arduino MKR WAN 1310 board was simply due to my novice understanding of this coding langauge and overall frustration with getting this code to work. The original plan was to use an [Arducam OV2640](https://www.amazon.com/Arducam-Module-Megapixels-Arduino-Mega2560/dp/B012UXNDOY/ref=sr_1_3?crid=3GJIGC7TPARXU&dib=eyJ2IjoiMSJ9.EW1GBWQzMTIbqVOv0CR9rm3qqGrW8XQe_RoSSOjEzBpLQ4D9AQo2dj8wAA9dWsWB-FyuC9tDDttSQtKQphwVLqH-ymyEOg5_CW-nuMSxolgwSnCTV63tOCfYvJUuW-pX8UqHZ4wnIv1f7aBtI5GCTmCH_tJ5MZ33Yfvg2oHFrBJcPYf69FvzFY790dWlD9ezI_9AToX-K1lwbbPL6sUfI1THbdEHHZutEWokJyaQP5I.UsdTgHEMksha3RnfpVNCyuJNmWEgUMmAXhaMtUxK97Y&dib_tag=se&keywords=arducam+ov2640&qid=1712368759&sprefix=arducam+ov%2Caps%2C96&sr=8-3) since that can be easily integrated into the main arduino code. However, I ran into issues where the photos from the Arducam OV2640 were either blurry, green/magenta tinted, or just completely dark. I did extensive research over a week of trying to trouble shoot this issue and believe this issue was caused by the lack of on-board ram for processing and saving the photos to a micro-SD card. I'm sure there lays a solution that allows for this camera to work with the main arduino board for this application, however I'll be completely honest and admit that finding that solution is way over my head. I would love to hear if anyone else was able to get an Arducam OV2640 to work with an Arduino MKR WAN 1310 board and return decent photographs and learn how they did it.
+
+My solution to this problem, however, was found when I stumbled upon the ESP32-CAM boards which are essentially arduino boards with the same camera as the Arducam OV2640 board along with ample ram and its own micro-SD card board that it can save to. I ended up setting up the ESP32-CAM to wait for a pulse sent to its GPIO 1 pin by the main arduino board. Once a pulse was received, then the ESP32-CAM knew to take a photo and save it to its own micro-SD card
+
+It should be noted that the main arduino code doesn't run correctly unless the following conditions are met:
+  - It can find both the interior and exterior temperature sensors
+  - It can find the pressure sensor
+  - It has a GPS signal (it will stop transmitting/saving data if its GPS signal is lost and will pick back up once fixed)
+  - A micro-SD card used for saving the backup data is insertted/found
+  - It can find the Real Time Clock (RTC) Board
+  - The LoRa WAN modue is found
+    
+Below is a flow chart to try and help you visualize how the code operates
+
+<INSERT FLOW CHART HERE! >
 
 ## Tracking Receiver Construction
 
-## Tracking Receiver Code
+The tracking receiver was constructed in a similar manner to the payload chassis described above. It was 3D printed and utelized threaded brass inserts in order to mount the necessary electronics for it to function. I also just soldered all the components together. This receiver shouldn't experience any necessary forces (unless I drop it) but I just soldered them all together out of habit.
+
+< INSERT PHOTO OF TRACKING RECEIVER CAD FILE! >
+
+< INSERT PHOTO OF TRACKING RECEIVER FULLY ASSEMBLED! >
+
+This tracking receiver had a kill switch on the side, a micro-SD card board for saving the packets of data just in case, and a coaxial connection out the top for an antenna to be connected to. For this project, I purchased a magentic antenna base that I attached attached to the top of my car so I could drive and track the balloon mid-flight:
+
+< INSERT PHOTO OF TRACKING RECEIVER INSTALLED ON MY CAR! >
+
+## Tracking Receiver Arduino and MATLAB Code
+
+Similarly to the payload code, the tracking receiver code works in two parts: another Arduino MKR WAN 1310 that is meant to intercept the packets being sent back to the ground by the HAB payload along with a MATLAB script that takes the packets of data and parses out the latitude and longitude coordinates in order to live-plot them on a geoplot.
+
+The arduino code itself is pretty simple; it just waits until it receives a packt of data like mentioned above. And once one is received, it then parses out the data and sends it the MATLAB script as well as prints it to a mini OLED screen on the receiver itself. This way, it can also be used in a hand-held mode in conjunction to the MATLAB tracking code.
+
+The MATLAB code turned out to be simpler to create than I originally anticipated. It also takes in the packets of data, still in .csv format, and parses out each variable (interior temperature, exterior temperature, ambient pressure, latitude, longitude, altitude, and # of satellites). Then it specifically takes the latitude and longitude coordinates and plots them onto a geoplot. The plan for this was to have someone in the passenger seat of my car with a laptop and both the receiver code and MATLAB plotting code running. This way I could drive while they relay information was to where the balloon is drifting off to.
+
+<PUT IN BLURB ABOUT HOW THIS WORKED IN PRACTICE!>
 
 ## Launch Protocol
 
+Never having launched a high-altiude balloon before, it honestly wasn't as bad as I initially expected. There are plenty of videos out there, the two i found most informative was one by [StratoStar](https://www.youtube.com/watch?v=5Z23L4QIgtQ&ab_channel=StratoStar-JasonKrueger) that walked you through the basics of filling the balloon and another one by [John Powell](https://www.youtube.com/watch?v=B7XEUJSekbI&ab_channel=JohnPowell) that walked you through rigging our payload to the balloon. Both of these videos had some really good, basic points that made filling the balloon seem very simple to a novice such as myself. Though I urge you to do your own research until you feel comfortable; there are plenty of amazing, informative videos on this topic and you can really get a good idea of what you're doing without ever attempting something like this beforehand.
+
+So with those informative videos mentioned, I feel that it is helpful to talk about our criteria for what a good day to launched looked like. These were our parameters that we were on the look for in terms of weather:
+  - A ground temperature above 40°F
+  - Daylight (between sunrise and sunset)
+  - Max windspeed of 15 mph
+  - Visibility of 5-10 nautical miles
+  - Little to no precipitation/Incliment Weather
+  - Little to no Cloud Cover (Important to us since we included a camera with our payload)
+
+Now you all can decide what conditions you would prefer to launch in; such as wanting less wind, not worrying about ground temperature as much, and not caring for cloud cover if youre not including a camera on-board. The sky's the limit (pun intended) for your launch, just make sure you are being safe about it and not launching the balloon at night with no light-strobe included
+
+Then, after watching several videos on high-altitude balloon launches and coming up with our list of criteria for optimal launch conditions, we devised a set of instructions for us to follow in order to have a quick, accident free launch:
+  1. Prior to launch, check the weather forcast daily the week leading up to the intended launch date
+  2. ensure the payload, parachute, and paracord rigging lines are completely assembled beforehand to make it simple to attach to the balloon
+  3. Drive to launching location. Ensure that the helium bottle is properly secured in the vehcile in order to prevent damage to the bottle
+  4. Lay tarp flat on the ground and put bottle and other heavy objects in the corners to prevent it from lifting up
+  5. Attach the pressure regulator to the bottle with wrenches. Make sure to put teflon tape on the threads to prevent leaking. Also do not open the helium bottle yet
+  6. Attach the quick disconnect hose to the pressure regulator along with the ball-valve filling apapratus
+  7. Set out rest of supplies needed for filling the balloon so you don't have to go searching for them. These include the fish scale, zip ties, payload with rigging and parachute attached, electrical tape, and either scisors or side cutters
+  8. Put on nitrile/latex gloves. These are needed by everyone who may need to touch the balloon
+  9. Open the bag that the weather balloon came in and carefully open it and lay it flat onto the tarp. Make sure not to step on it at all
+  10. Insert ball-valve filling apparatus into the neck of the balloon carefully in order to prevent tearing of the latex
+  11. Attach fish scale to both the helium bottle and the neck of the balloon via paracord and zipties. This will be used to measure buoyance force
+  12. Once the ball-valve filling apparatus and fish scale/tether is attached to both the helium bottle and balloon, ensure that the pressure regulator valve is fully closed and then fully open the helium bottle valve
+  13. Begin filling the balloon by slowly openning the pressure regulator valve. Once the balloon is off the ground and above the bottle, you may then increase the fill rate
+  14. While the balloon is filling, feel free to turn on the payload electronics and the tracking code and get those running.
+  15. Once the payload is verified to be on and operating, tape shut the lid for the styrofoam shell and attach the bubble wrap onto the outside of the styrofoam shell
+  16. Once the balloon is either filled to the desired buoyancy force or the helium bottle is fully depleted, close the pressure regulator valve.
+  17. Attach the parachute and payload to the balloon via paracord and zipties. Its good practice to first twist the neck of the balloon and and then zip tying the payload and parachute to where its twisted. This will help prevent helium leaking.
+  18. Remove the ball-valve filing appartus but leave in the PVC fitting. This will help prevent the zip tie from slipping off.
+  19. Fold the rest of the neck of the balloon up and zip tie into place, this again is to prevent helium from leaking out and from keeeping the payload from slipping off the balloon mid-flight
+  20. Once the payload is fully attached, ball-valve filling apparatus is removed, and the payload electronics and tracking receiver are confirmed to be working correctly, cut the tether line holding the balooon to the helium bottle and watch it drift
+  21. Pack up everything into your vehicle and get the tracking receiver and MATLAB code running on a laptop running in the passenger seat. Passenger optional depending on your skill level
+  22. Track the balloon and hopefully recover it.
+  23. PROFIT!
+
 ## Data Results
 
+Will fill once launch is conducted.
+
 ## Photo Results
+
+Will fill once launch is conducted.
+
+## Suggestions for Improvements
 
 ## Useful Online Tools
 
