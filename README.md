@@ -3,8 +3,8 @@
 ## WORK IN PROGRESS
 
 ## Contents
-1. [Project Importance](#user-project-importance)
-2. [Every Parts List](#user-every-parts-list)
+1. [Project Importance](#user-content-project-importance)
+2. [Every Parts List](#user-content-every-parts-list)
 3. [Payload Construction](#user-content-payload-construction)
 4. [Payload Arduino Code](#user-content-payload-arduino-code)
 5. [Tracking Receiver Construction](#user-content-tracking-receiver-construction)
