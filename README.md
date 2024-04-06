@@ -8,7 +8,7 @@
 3. [Payload Construction](#user-content-payload-construction)
 4. [Payload Arduino Code](#user-content-payload-arduino-code)
 5. [Tracking Receiver Construction](#user-content-tracking-receiver-construction)
-6. [Tracking Reciever Code](#user-content-tracking-receiver-code)
+6. [Tracking Receiver Code](#user-content-tracking-receiver-code)
 7. [Launch Protocol](#user-content-launch-protocol)
 8. [Data Results](#user-content-data-results)
 9. [Photo Results](#user-content-photo-results)
@@ -98,7 +98,7 @@ So this was my first big project that utilized Arduino and the coding language s
 
 ## Tracking Receiver Construction
 
-## Tracking Reciever Code
+## Tracking Receiver Code
 
 ## Launch Protocol
 
