@@ -98,7 +98,7 @@ In prior years, including my sophmore year, there were a multitude of issues wit
 
 When designing our HAB payload, the biggest fear that we needed to resolve was the absolute beating our payload electronics were expected to endure during a test flight. The jetstreams up above can get pretty nasty and put an absolute beating on our payload, so making sure that every component was a) soldered together and b) held down in some fashion was important to ensuring nothing would come loose and possibly short out the entire payload electronic system. Likewise, we wanted our payload to remain light (Under 2 pounds total, but preferably less) for safety reasons. So in conclusion, these three main considerations is what drove our design for what we are calling our payload chassis:
 
-<INSERT PICTURE OF PAYLOAD CHASSIS! >
+![](Reference-Photos/Payload-Chassis-CAD-Photo.png) 
 
 This chassis was 3D printed on my Ender 3 Pro printer using blach hatchbox PLA. Chamfers were placed in as many locations as possible in order to cut-down on support material and decrease the printing time. Likewise, 10% infill was used but with 4 walls in order to help with strength and rigidity.
 
@@ -110,7 +110,7 @@ Likewise, when desinging our HAB payload, we did extensive online research and f
 
 <INSERT A PICTURE OF THE STYROFOAM SHELL! >
 
-And then just to give us a bit more ease of mind with our payload, we decided to wrapp it in several layers of bubble wrap in order to help cushion the impact force just incase our payload would happen to hit someones property.
+And then just to give us a bit more ease of mind with our payload, we decided to wrap it in several layers of bubble wrap in order to help cushion the impact force just incase our payload would happen to hit someones property.
 
 <INSERT A PICTURE OF THE BUBBLE WRAPPED SHELL! >
 
@@ -122,7 +122,7 @@ Firstly, the [Payload Arduino Code](Payload-Arduino-Code) is broken up into two 
 
 The reason for the odd way of integrating the ESP32-CAM to communicate with the Arduino MKR WAN 1310 board was simply due to my novice understanding of this coding langauge and overall frustration with getting this code to work. The original plan was to use an [Arducam OV2640](https://www.amazon.com/Arducam-Module-Megapixels-Arduino-Mega2560/dp/B012UXNDOY/ref=sr_1_3?crid=3GJIGC7TPARXU&dib=eyJ2IjoiMSJ9.EW1GBWQzMTIbqVOv0CR9rm3qqGrW8XQe_RoSSOjEzBpLQ4D9AQo2dj8wAA9dWsWB-FyuC9tDDttSQtKQphwVLqH-ymyEOg5_CW-nuMSxolgwSnCTV63tOCfYvJUuW-pX8UqHZ4wnIv1f7aBtI5GCTmCH_tJ5MZ33Yfvg2oHFrBJcPYf69FvzFY790dWlD9ezI_9AToX-K1lwbbPL6sUfI1THbdEHHZutEWokJyaQP5I.UsdTgHEMksha3RnfpVNCyuJNmWEgUMmAXhaMtUxK97Y&dib_tag=se&keywords=arducam+ov2640&qid=1712368759&sprefix=arducam+ov%2Caps%2C96&sr=8-3) since that can be easily integrated into the main arduino code. However, I ran into issues where the photos from the Arducam OV2640 were either blurry, green/magenta tinted, or just completely dark. I did extensive research over a week of trying to trouble shoot this issue and believe this issue was caused by the lack of on-board ram for processing and saving the photos to a micro-SD card. I'm sure there lays a solution that allows for this camera to work with the main arduino board for this application, however I'll be completely honest and admit that finding that solution is way over my head. I would love to hear if anyone else was able to get an Arducam OV2640 to work with an Arduino MKR WAN 1310 board and return decent photographs and learn how they did it.
 
-My solution to this problem, however, was found when I stumbled upon the ESP32-CAM boards which are essentially arduino boards with the same camera as the Arducam OV2640 board along with ample ram and its own micro-SD card board that it can save to. I ended up setting up the ESP32-CAM to wait for a pulse sent to its GPIO 1 pin by the main arduino board. Once a pulse was received, then the ESP32-CAM knew to take a photo and save it to its own micro-SD card
+My solution to this problem, however, was found when I stumbled upon the ESP32-CAM boards which are essentially arduino boards with the same camera as the Arducam OV2640 board along with ample ram and its own micro-SD card board that it can save to. I ended up setting up the ESP32-CAM to wait for a pulse sent to its GPIO 1 pin by the main arduino board. Once a pulse was received, then the ESP32-CAM knew to take a photo and save it to its own micro-SD card.
 
 It should be noted that the main arduino code doesn't run correctly unless the following conditions are met:
   - It can find both the interior and exterior temperature sensors
@@ -135,6 +135,12 @@ It should be noted that the main arduino code doesn't run correctly unless the f
 Below is a flow chart to try and help you visualize how the code operates
 
 <INSERT FLOW CHART HERE! >
+
+And then to help you visualize roughly how each component was soldered together, I made the following schematic for our presentation and figure I would include it here. Just to make a small note that the schematic doesn't show, I ended up using two small pieces of perfboard to create a sort of 'hub' for each component that needed to share a specific wire to connect to. In other words, the components that needed a ground, 3.3V, Serial Clock Line (SCL), and Serial Data Line (SDA) wire were all connected to these perfboard 'hubs'. And the meaning for the second one was to handle the litte board that was necessary to convert the 3.3V from the Arduino board to 5V for the micro-SD board. During testing, I found that the Arduino couldn't recognize the micro-SD card nor board when everything was running off of 3.3V and when I tried using 5V on a whim everything worked flawlessly. Depending on what micro-SD board, this may not be an issue for you but if it is I suggest saving yourself a possible headache and try this to see if it works!
+
+<INSERT SCHEMATIC HERE! >
+
+<INSERT PICTURE OF 'Hubs' HERE ! >
 
 ## Tracking Receiver Construction
 
