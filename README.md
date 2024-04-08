@@ -1,6 +1,8 @@
-# High Altitude Balloon (HAB) Senior Capstone Project
+<img src=Reference-Photos/OSU-Engineering-Placard.png width='1000'>
 
-## WORK IN PROGRESS
+# WORK IN PROGRESS! (4/7/2024) LAUNCH ON 4/9/2024
+
+# High Altitude Balloon (HAB) Senior Capstone Project
 
 ## Contents
 1. [Project Importance](#user-content-project-importance)
@@ -28,7 +30,7 @@ For more context on the reason behind this project, the first aerospace engineer
 
 #### (Figure from Introduction to Flight Ninth edition by J.D. Anderson, Jr. and M.L. Bowden)
 
-In prior years, including my sophmore year, there were a multitude of issues with the commerical weather balloons that can be bought off the internet (i.e., BLANK and BLANK). The issues ranging from the balloons themself pre-maturely bursting before it could reach the target altitude or the payload electronics being lost mid-flight. This was a concern to the Mechanical and Aerospace Engineering (MAE) Department since each year they would have to spend upwards of $1000+ for a new weather balloon for each year. This is where our project's importance came in since the goal was to create a new weather balloon payload using off-the-shelf components that was cost-effective (sub $600 for the payload) that could reliably reach a target altitude of 100,000 ft and be recovered for future use. If it couldn't be recovered, the low cost for each payload was important so the department wouldn't need to spend as much money for each launch.
+In prior years, including my sophmore year, there were a multitude of issues with the commerical weather balloons that can be bought off the internet (i.e., QRP Light Tracker and Tracksoar). The issues ranging from the balloons themself pre-maturely bursting before it could reach the target altitude or the payload electronics being lost mid-flight. This was a concern to the Mechanical and Aerospace Engineering (MAE) Department since each year they would have to spend upwards of $1000+ for a new weather balloon for each year. This is where our project's importance came in since the goal was to create a new weather balloon payload using off-the-shelf components that was cost-effective (sub $600 for the payload) that could reliably reach a target altitude of 100,000 ft and be recovered for future use. If it couldn't be recovered, the low cost for each payload was important so the department wouldn't need to spend as much money for each launch.
 
 ## Every Parts List
 
