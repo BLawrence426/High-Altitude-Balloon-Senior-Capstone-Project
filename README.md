@@ -13,9 +13,10 @@
 8. [Data Results](#user-content-data-results)
 9. [Photo Results](#user-content-photo-results)
 10. [Suggestions for Improvements](#user-content-suggestions-for-improvements)
-11. [Useful Online Tools](#user-content-useful-online-tools)
-12. [Resources and Inspirations](#user-content-resources-and-inspirations)
-13. [Acknowledgements](#user-content-acknowledgements)
+11. [Final Thoughts and Reflection](#user-content-final-thoughts-and-reflection)
+12. [Useful Online Tools](#user-content-useful-online-tools)
+13. [Resources and Inspirations](#user-content-resources-and-inspirations)
+14. [Acknowledgements](#user-content-acknowledgements)
 
 
 ## Project Importance
@@ -23,7 +24,8 @@ For my senior year of college at The Ohio State University, we were assigned a c
 
 For more context on the reason behind this project, the first aerospace engineering course (AERO 2200: Introduction to Aerospace Engineering) that each new, bright-eyed sophmore in the major takes will conduct a high-altitude balloon lab at one point. This lab involves a launch of a high-altitude balloon by the professor and other academic faculty in order to collect atmospheric data such as ambient temperature and pressure in order to be analyzed by the students. The purpose for this lab is to teach the students the standard atmosphere (specifically, how air pressure, temperature, and density changes with altitude).
 
-![](Reference-Photos/Standard-Atmosphere-Anderson-Textbook-Photo.jpg) 
+<img src=Reference-Photos/Standard-Atmosphere-Anderson-Textbook-Photo.jpg width='300'>
+
 #### (Figure from Introduction to Flight Ninth edition by J.D. Anderson, Jr. and M.L. Bowden)
 
 In prior years, including my sophmore year, there were a multitude of issues with the commerical weather balloons that can be bought off the internet (i.e., BLANK and BLANK). The issues ranging from the balloons themself pre-maturely bursting before it could reach the target altitude or the payload electronics being lost mid-flight. This was a concern to the Mechanical and Aerospace Engineering (MAE) Department since each year they would have to spend upwards of $1000+ for a new weather balloon for each year. This is where our project's importance came in since the goal was to create a new weather balloon payload using off-the-shelf components that was cost-effective (sub $600 for the payload) that could reliably reach a target altitude of 100,000 ft and be recovered for future use. If it couldn't be recovered, the low cost for each payload was important so the department wouldn't need to spend as much money for each launch.
@@ -98,7 +100,7 @@ In prior years, including my sophmore year, there were a multitude of issues wit
 
 When designing our HAB payload, the biggest fear that we needed to resolve was the absolute beating our payload electronics were expected to endure during a test flight. The jetstreams up above can get pretty nasty and put an absolute beating on our payload, so making sure that every component was a) soldered together and b) held down in some fashion was important to ensuring nothing would come loose and possibly short out the entire payload electronic system. Likewise, we wanted our payload to remain light (Under 2 pounds total, but preferably less) for safety reasons. So in conclusion, these three main considerations is what drove our design for what we are calling our payload chassis:
 
-<img src=Reference-Photos/Payload-Chassis-CAD-Photo.PNG width='300'>
+<img src=Reference-Photos/Payload-Chassis-CAD-Photo.PNG width='400'>
 
 The chassis ended up having dimensions of 400x400x600mm (Base x Height x Width) and was 3D printed on my Ender 3 Pro printer using blach hatchbox PLA. Chamfers were placed in as many locations as possible in order to cut-down on support material and decrease the printing time. Likewise, 10% infill was used but with 4 walls in order to help with strength and rigidity. This chassis is also divided up into two seperate pieces: the shell itself and a little platform with legs that was used for holding the Arduino MKR WAN 1310 board while still allowing for wires to pass underneath and be soldered to its pins. For more images of the chassis CAD files as well as the Solidworks files themself, go to the [Payload CAD Files](Payload-Chassis-CAD-Folder) folder up above!
 
@@ -120,7 +122,7 @@ And then just to give us a bit more ease of mind with our payload, we decided to
 
 Disclaimer, but this was my first big project that utilized Arduino and the coding language so I apologize upfront if my code looks terrible. I know it's not as optimized as it could be, but I made sure to comment it as best as possible so everyone can follow it. Below I'll try to explain what the code does:
 
-Firstly, the [Payload Arduino Code](Payload-Arduino-Code) is broken up into two files: the main arduino code and the camera code. The main arduino code is what gets the current interior payload temperature, exterior ambient temperature, ambient pressure, GPS data (latitude and longitude), and date/time and both saves the data to the backup micro-SD card and transmit packets of data via the on-board LoRa WAN module in .csv format. Furthermore, this code also communicates with the ESP32-CAM and tells it when to take a photo (every 30 seconds). So then on the flipside, the camera code waits until it receives a trigger from the main arduino board that tells it to take a photo. 
+Firstly, the [Payload Arduino Code](Payload-Arduino-Code-Folder) is broken up into two files: the main arduino code and the camera code. The main arduino code is what gets the current interior payload temperature, exterior ambient temperature, ambient pressure, GPS data (latitude and longitude), and date/time and both saves the data to the backup micro-SD card and transmit packets of data via the on-board LoRa WAN module in .csv format. I also included two versions of the main arduino code which either use 915 MHz or 433 MHz for transmitting its data packets depending on what you prefer. Furthermore, this code also communicates with the ESP32-CAM and tells it when to take a photo (every 30 seconds). So then on the flipside, the camera code waits until it receives a trigger from the main arduino board that tells it to take a photo. 
 
 The reason for the odd way of integrating the ESP32-CAM to communicate with the Arduino MKR WAN 1310 board was simply due to my novice understanding of this coding langauge and overall frustration with getting this code to work. The original plan was to use an [Arducam OV2640](https://www.amazon.com/Arducam-Module-Megapixels-Arduino-Mega2560/dp/B012UXNDOY/ref=sr_1_3?crid=3GJIGC7TPARXU&dib=eyJ2IjoiMSJ9.EW1GBWQzMTIbqVOv0CR9rm3qqGrW8XQe_RoSSOjEzBpLQ4D9AQo2dj8wAA9dWsWB-FyuC9tDDttSQtKQphwVLqH-ymyEOg5_CW-nuMSxolgwSnCTV63tOCfYvJUuW-pX8UqHZ4wnIv1f7aBtI5GCTmCH_tJ5MZ33Yfvg2oHFrBJcPYf69FvzFY790dWlD9ezI_9AToX-K1lwbbPL6sUfI1THbdEHHZutEWokJyaQP5I.UsdTgHEMksha3RnfpVNCyuJNmWEgUMmAXhaMtUxK97Y&dib_tag=se&keywords=arducam+ov2640&qid=1712368759&sprefix=arducam+ov%2Caps%2C96&sr=8-3) since that can be easily integrated into the main arduino code. However, I ran into issues where the photos from the Arducam OV2640 were either blurry, green/magenta tinted, or just completely dark. I did extensive research over a week of trying to trouble shoot this issue and believe this issue was caused by the lack of on-board ram for processing and saving the photos to a micro-SD card. I'm sure there lays a solution that allows for this camera to work with the main arduino board for this application, however I'll be completely honest and admit that finding that solution is way over my head. I would love to hear if anyone else was able to get an Arducam OV2640 to work with an Arduino MKR WAN 1310 board and return decent photographs and learn how they did it.
 
@@ -134,23 +136,39 @@ It should be noted that the main arduino code doesn't run correctly unless the f
   - It can find the Real Time Clock (RTC) Board
   - The LoRa WAN modue is found
     
-Below is a flow chart to try and help you visualize how the code operates
+Below is a flow chart to try and help you visualize how the code operates:
 
-<INSERT FLOW CHART HERE! >
+<img src=Reference-Photos/HAB-Payload-Arduino-Code-Flowchart.png width='500'>
 
 And then to help you visualize roughly how each component was soldered together, I made the following schematic for our presentation and figure I would include it here. Just to make a small note that the schematic doesn't show, I ended up using two small pieces of perfboard to create a sort of 'hub' for each component that needed to share a specific wire to connect to. In other words, the components that needed a ground, 3.3V, Serial Clock Line (SCL), and Serial Data Line (SDA) wire were all connected to these perfboard 'hubs'. And the meaning for the second one was to handle the litte board that was necessary to convert the 3.3V from the Arduino board to 5V for the micro-SD board. During testing, I found that the Arduino couldn't recognize the micro-SD card nor board when everything was running off of 3.3V and when I tried using 5V on a whim everything worked flawlessly. Depending on what micro-SD board, this may not be an issue for you but if it is I suggest saving yourself a possible headache and try this to see if it works!
 
-<INSERT SCHEMATIC HERE! >
+<img src=Reference-Photos/Payload-Electronics-Schematic.jpg width='600'>
+
+Here is the list of each wire color shown in the schematic and what their purposes are:
+1. Red: 3.3v
+2. Black: Ground
+3. Orange: 5v
+4. White: Temperature Sensor Communication
+5. Green: Serial Clock Line (SCL)
+6. Yellow: Serial Data Line (SCA)
+7. Purple: Micro-SD Card Board Communication
+8. Pink: Master-In, Slave-Out (MISO)
+9. Brown: Master-Out, Slave-In (MOSI)
+10. Blue: Serial Clock (SCK)
+11. Gray: Camera Communication
+12. Cyan: Antenna
 
 <INSERT PICTURE OF 'Hubs' HERE ! >
 
 ## Tracking Receiver Construction
 
-The tracking receiver was constructed in a similar manner to the payload chassis described above. It was 3D printed and utelized threaded brass inserts in order to mount the necessary electronics for it to function. I also just soldered all the components together. This receiver shouldn't experience any necessary forces (unless I drop it) but I just soldered them all together out of habit.
+The tracking receiver was constructed in a similar manner to the payload chassis described above. It was 3D printed and utilized threaded brass inserts in order to mount the necessary electronics for it to function. The receiver shouldn't experience any necessary forces (unless I drop it) but I just soldered them all together out of habit. Below is a picture of the CAD file:
 
-< INSERT PHOTO OF TRACKING RECEIVER CAD FILE! >
+<img src=Reference-Photos/Tracking-Reciever-Assembly-Isometric-View-Photo.PNG width='500'> 
 
-< INSERT PHOTO OF TRACKING RECEIVER FULLY ASSEMBLED! >
+And then here is a picture of the fully assembled tracking reciever. It can be hand-held like I did in the photo, but also attached to a laptop and used in tandem with a MATLAB script I also wrote. This way of using the tracking reciever is outlined more in the next section, but here is a photo of how the tracking reciever looked when fully assembled:
+
+<img src=Reference-Photos/Tracking-Reciever-Fully-Assembled-Photo.jpg width='300'>
 
 This tracking receiver had a kill switch on the side, a micro-SD card board for saving the packets of data just in case, and a coaxial connection out the top for an antenna to be connected to. For this project, I purchased a magentic antenna base that I attached attached to the top of my car so I could drive and track the balloon mid-flight:
 
@@ -215,6 +233,23 @@ Will fill once launch is conducted.
 
 ## Suggestions for Improvements
 
+From the start of this project, I was in close conversations with our faculty advisor who has much, much more experience with unmanned aircraft and the like. He originally showed us [APRS.fi](https://aprs.fi/#!lat=40.0&lng=-83), a nifty website that shows all the radio towers and devices that are using frequencies allowed to those who have an amateur radio license (144. 390 MHz). Due to myself or anyone in my group not in possession of this license, we were going to have to use our faculty advisor's with our original plan for our project. However, after some digging online, I discovered the Arduino MKR WAN 1310 board that had a radio module built right into the board itself. This struck me as really cool and decided to use this board without giving it much thought that it could only output on either 915 MHz, 868 MHz, or 433 MHz. So using this specific arduino board to handle transmitting our data packets, we were no longer going to be able to use the APRS.fi website which sucked since it seemed amazing for tracking devices such as a high-altitude balloon.
+
+That's where the tracking reciever came into fruition since my idea would be to have someone (me) go driving after it in a vehicle along its entire flight path instead of letting it go and waiting for it to start showing up on the APRS.fi website. I say all of this to lead up my suggestion: I reccommend trying to change the way data is being transmitted with our original design. I think axing the Arduino MKR WAN 1310 board idea and instead going with something like an Arduino nano or an Arduino MKR ZERO and either finding or building a dedicated radio module that can use amateur radio license frequencies would be a better idea. I found a couple online, but most seemed very above my skill level and out of our given budget of $600. However, there are plenty of ideas and attemps that I found online by just doing a simple [google search](https://www.google.com/search?sca_esv=40ca4543c95fb865&sca_upv=1&rlz=1C1CHBF_enUS918US918&sxsrf=ACQVn09Dc6VqZY1E6mfl7baIcSKXs-xfVg:1712535318372&q=Ham+radio+based+arduino&source=lnms&uds=AMwkrPuJnGNBYDFIr0HhqiRaoUAuVyLZAJhHT3ZsNbJrpRz7MLUljWALRMXfnOPpDrRCpQ7cUbILcy7dLthDrSIvOlRcOcMkZ18scEchMC_6upBJYJjlUOKxca2WjmFp8aZxq9JclDtMlKGINlS7n5RYSM2Lk7Ev3UVEBotyd7-SOWywPPpeT-TqfOVIRkUXAxziJuqCmve2gWQAkwulVwZmAnvBQDtjfcsUMxUOVqNfAF13veJD4LWpxjZnOXr6nVV7raN_1qJYJCyatA-4VfkTVjvTlogaycbvADAhc028YjWL6XVgakGo3_frnZIFJgNMElDDWHDC&sa=X&ved=2ahUKEwivlsSaq7GFAxUZl4kEHeAxAw8Q0pQJegQIERAB&biw=1920&bih=911&dpr=1) that seemed really promising. Overall, I would like to keep tinkering with this once I graduate in my free time since I really enjoyed this project and would like to keep messing with this stuff well into the future. I intend on getting my amateur radio operator license once I have some more free time in order to try and expand this project into a very robust product.
+
+A second suggestion that I would like to see with this project is honestly replacing the need for a proprietary Arduino board and instead design and print a new micro-controller board that can take its place. My thought process for this is that it would help do the following things:
+  - Cut weight by being more compact
+  - Cheaper in the long run
+  - Marketable to individuals or companies that deal with HAB's
+
+So I think by making an all-in-one micro-controller meant for this project specifically, we could end up with a simple board that would just need temperature sensors, a pressure sensor, and a radio module to be plugged into it for it to operate as intendended. My idea would be that a micro-controller specifically designed for this project would already have both a GPS and RTC board on it already since these would need to be present regardless while still giving the end-user the ability to choose their own preferred sensors and radio module. Another idea would maybe making two versions of this board: a 'lite' one if you will that wouldn't support a camera and be slightly cheaper than the second 'more expensive' board that would be capabale of supporting a camera similar to the Arducam OV2640 camera I mentiond prior in this page. The bigest different between these two boards would be its included RAM since I still believe that is why I couldn't get the Arducam OV2640 to work originally and needed to switch to the ESP32-CAM board.
+
+I'm sure there are plenty of other suggestions to change with this project, however these are the two that I immediately thought of when trying to do some reflecting at the end of the project. If you have any ideas or suggestions, or even already changed things on your end, I would love to hear about it! I am a big novice when it comes to this sort of stuff so I know plenty of people could improve immensely on the work laid out here.
+
+## Final Thoughts and Reflectin
+
+Overall, I had a crazy ammount of fun and enjoyment while tackling this project. I have always had an interest in 3D printing, tinkering with electronics, and CAD just to name a few of the applicable ones to this project, so I was happy to finally find that same enjoyment in my coursework. This project taught me a lot about researching and formulating design ideas in order to refine and bounce off 
+
 ## Useful Online Tools
 
 The first useful online tool that I used for this project was this [Balloon Perfomance Calculator](https://www.highaltitudescience.com/pages/balloon-performance-calculator) created by High Altitude Science. I liked using this for seeing how much helium I needed for my balloon-payload setup and ensuring that it would reach my target altitude.
@@ -233,6 +268,6 @@ Likewise, the hundreds of other online blogs, papers, and individuals I approach
 - Thank you to our course advisor for this project. Again, I won't put his name on here also out of respect for his privacy, but he was very helpful for keeping us on track and teaching us vital skills required to join the workforce in the near future
 - Thank you to our GTA, he was super nice and helpful when we approached him with questions
 - Thank you to BALLOONIACS, if it wasn't for their company we wouldn't have been able to get helium in time and get our project off the ground (literally)!
-- Thank you to my parents, grandparents, sibling, and girlfriend. You all were a major source of support throughout my education as you very well know and I greatly appreciate it. I wouldn't have been able to make it to where I am today without you all.
+- Thank you to my parents, grandparents, sister, and girlfriend. You all were a major source of support throughout my education as you very well know and I greatly appreciate it. I wouldn't have been able to make it to where I am today without you all.
 - Monster Energy Drinks and Redbull. Caffeine is the only thing that got me through all my coursework. I spent plenty of all nighters getting this project to where it ended up and it was because of these bad boys I was able to do so.
   
