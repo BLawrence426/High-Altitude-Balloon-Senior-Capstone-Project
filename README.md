@@ -12,7 +12,7 @@
 5. [Tracking Receiver Construction](#user-content-tracking-receiver-construction)
 6. [Tracking Receiver Arduino and MATLAB Code](#user-content-tracking-receiver-code)
 7. [Launch Protocol](#user-content-launch-protocol)
-8. [Data Results](#user-content-data-results)
+8. [Launch Experience and Data Results](#user-content-launch-experience-and-data-results)
 9. [Photo Results](#user-content-photo-results)
 10. [Suggestions for Improvements](#user-content-suggestions-for-improvements)
 11. [Final Thoughts and Reflection](#user-content-final-thoughts-and-reflection)
