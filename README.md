@@ -13,13 +13,14 @@
 6. [Tracking Receiver Arduino and MATLAB Code](#user-content-tracking-receiver-arduino-and-matlab-code)
 7. [Launch Protocol](#user-content-launch-protocol)
 8. [Launch Experience and Data Results](#user-content-launch-experience-and-data-results)
-9. [Flight Test Data Comparison to Simulation Code](#user-content-flight-test-data-comparison-to-simulation)
+9. [Flight Test Data Comparison to Simulation Code](#user-content-flight-test-data-comparison-to-simulation-code)
 10. [Photo Results](#user-content-photo-results)
 11. [Suggestions for Improvements](#user-content-suggestions-for-improvements)
 12. [Final Thoughts and Reflection](#user-content-final-thoughts-and-reflection)
 13. [Useful Online Tools](#user-content-useful-online-tools)
 14. [Resources and Inspirations](#user-content-resources-and-inspirations)
 15. [Acknowledgements](#user-content-acknowledgements)
+
 
 ## Project Importance
 For my senior year of college at The Ohio State University, we were assigned a capstone group tasked with completing a year-long project. There were a variety of topics we could possibly be assigned; from creating a workbench meant for Starlab to conducting research for both the Navy and Airforce to creating a cost-effective high-altitude balloon (HAB) using off-the-shelf components. Can you guess which one I was assigned?
@@ -160,8 +161,6 @@ Here is the list of each wire color shown in the schematic and what their purpos
 11. Gray: Camera Communication
 12. Cyan: Antenna
 
-<INSERT PICTURE OF 'Hubs' HERE ! >
-
 ## Tracking Receiver Construction
 
 The tracking receiver was constructed in a similar manner to the payload chassis described above. It was 3D printed and utilized threaded brass inserts in order to mount the necessary electronics for it to function. The receiver shouldn't experience any necessary forces (unless I drop it) but I just soldered them all together out of habit. Below is a picture of the CAD file:
@@ -284,7 +283,7 @@ Overall, we got a bunch of cool data from our launch and I am incredibly thankfu
 
 ## Flight Test Data Comparison to Simulation Code
 
-And just because I had to do it for our presentation and final report for the class this project was for, here are the plots that I created that compares the data collected from our Flight Test to the code I wrote that simulated our weather balloon launching. The first one is temperature:
+And just because I had to do it for our presentation and final report for the class this project was for, here are the plots that I created that compares the data collected from our Flight Test to the code I wrote that simulated our weather balloon launching. The code itself is located in the [MATLAB Comparison](MATLAB-Comparison-Plots-And-Code) folder! The first one is temperature:
 
 <img src=MATLAB-Comparison-Plots-And-Code/Temperature-Comparison-Plot.png width='500'>
 
