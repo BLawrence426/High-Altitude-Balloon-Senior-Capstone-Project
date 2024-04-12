@@ -13,12 +13,13 @@
 6. [Tracking Receiver Arduino and MATLAB Code](#user-content-tracking-receiver-arduino-and-matlab-code)
 7. [Launch Protocol](#user-content-launch-protocol)
 8. [Launch Experience and Data Results](#user-content-launch-experience-and-data-results)
-9. [Photo Results](#user-content-photo-results)
-10. [Suggestions for Improvements](#user-content-suggestions-for-improvements)
-11. [Final Thoughts and Reflection](#user-content-final-thoughts-and-reflection)
-12. [Useful Online Tools](#user-content-useful-online-tools)
-13. [Resources and Inspirations](#user-content-resources-and-inspirations)
-14. [Acknowledgements](#user-content-acknowledgements)
+9. [Flight Test Data Comparison to Simulation Code](#user-content-flight-test-data-comparison-to-simulation)
+10. [Photo Results](#user-content-photo-results)
+11. [Suggestions for Improvements](#user-content-suggestions-for-improvements)
+12. [Final Thoughts and Reflection](#user-content-final-thoughts-and-reflection)
+13. [Useful Online Tools](#user-content-useful-online-tools)
+14. [Resources and Inspirations](#user-content-resources-and-inspirations)
+15. [Acknowledgements](#user-content-acknowledgements)
 
 ## Project Importance
 For my senior year of college at The Ohio State University, we were assigned a capstone group tasked with completing a year-long project. There were a variety of topics we could possibly be assigned; from creating a workbench meant for Starlab to conducting research for both the Navy and Airforce to creating a cost-effective high-altitude balloon (HAB) using off-the-shelf components. Can you guess which one I was assigned?
@@ -280,6 +281,26 @@ And then finally, we also collected ambient pressure during the entire flight. W
 The pressure data, despite the gap in data, shown the exact same trend that we were expecting from our simulations. It had a nice sort of parabolic shape to it and ended up having a minimum pressure of 0.23 psi (1585.79 Pascals) whichw as similar to what we were expecting before we launched which was great!
 
 Overall, we got a bunch of cool data from our launch and I am incredibly thankful that the Air Tag was able to save our project/payload from being completely lost. All the data collected lined up rather similarly to what we expected which was amazing for our hypothesis that we came up with at the beginning of the school year. I'm a bit dissapointed that the way our balloon payload was coded caused it to stop collecting data at high altitudes due to the GPS not getting a signal from any satellites, but I am happy that it worked for the most part! If I were to use this payload again as is, I would stick to a smaller balloon like a 100 or 200 gram balloon that would reach a slighly shorter altitude (about 30,000-40,000 ft) in order to prevent the GPS from disconnecting. And with proper changes to the code, I would run the payload again as is in order for it to collect data despite not having a GPS signal.
+
+## Flight Test Data Comparison to Simulation Code
+
+And just because I had to do it for our presentation and final report for the class this project was for, here are the plots that I created that compares the data collected from our Flight Test to the code I wrote that simulated our weather balloon launching. The first one is temperature:
+
+<img src=MATLAB-Comparison-Plots-And-Code/Temperature-Comparison-Plot.png width='500'>
+
+As can be seen in this plot, the flight test data is definitely skewed due to the handwarmer warming up the styrofoam enough to cause the exterior temperature sensor to also become warm. The neat thing to note, however, is that the exterior temperature sensor appeared to follow the same trend as the simulation code, which is based off of the standard atmosphere model. The Flight Test temperature data shows an initial clear, steep decrease in temperature followed by it seemingly staying constant/slightly increasing. This was then followed by the temperature decreasing for a little while before it drastically increasing as the balloon fell closer and closer back to the Earth's surface.
+
+Likewise, here is the plot for pressure:
+
+<img src=MATLAB-Comparison-Plots-And-Code/Pressure-Comparison-Plot.png width='500'>
+
+The flight test data for pressure honestly couldn't have been more close to be completely honest. It showed the exact same trend to the simulated results with only the pressure increasing sooner in the Flight Test data. This could be due to the descent rate being much faster than what was calculated in the simulated data and shouldn't really be looked too deep into. The important thing is just how they showed the same trend and honestly ended up with very similar minimum pressures which is amazing!
+
+And then finally, here is a plot for altitude. Please note that this plot was created using the pressure altitude calculated via the pressure collected during the Flight Test:
+
+<img src=MATLAB-Comparison-Plots-And-Code/Altitude-Comparison-Plot.png width='500'>
+
+Again, the flight test data for altitude was almost spot on like with pressure. The only differences are again, the altitude decreasing quicker than the simulation again (for similar reasons just stated previously) along with the flight test data appearing to show that the balloon reached a maximum altitude of about 20,000 ft. The biggest reason for this difference is that the code assumes that the balloon reaches the user-input target altitude, which in this case was 110,000 ft like the manufacturer specified. I'm sure with more tinkering that the simulation would match up closer to the data collected here, however I do think that the gap in data caused by the loss of GPS connection to also be to blame for the altitude collected from the flight test data. If it collected temperature and pressure for the entire flight, I think we could have closer curve to the flght test data!
 
 ## Photo Results
 
