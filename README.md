@@ -1,8 +1,8 @@
 <img src=Reference-Photos/OSU-Engineering-Placard.png width='1000'>
 
-# WORK IN PROGRESS! (4/7/2024) LAUNCH ON 4/9/2024
-
 # High Altitude Balloon (HAB) Senior Capstone Project
+
+<img src=Reference-Photos/Curvature-Photo-Title-Page.jpg width='600'>
 
 ## Contents
 1. [Project Importance](#user-content-project-importance)
@@ -19,7 +19,6 @@
 12. [Useful Online Tools](#user-content-useful-online-tools)
 13. [Resources and Inspirations](#user-content-resources-and-inspirations)
 14. [Acknowledgements](#user-content-acknowledgements)
-
 
 ## Project Importance
 For my senior year of college at The Ohio State University, we were assigned a capstone group tasked with completing a year-long project. There were a variety of topics we could possibly be assigned; from creating a workbench meant for Starlab to conducting research for both the Navy and Airforce to creating a cost-effective high-altitude balloon (HAB) using off-the-shelf components. Can you guess which one I was assigned?
@@ -174,7 +173,9 @@ And then here is a picture of the fully assembled tracking reciever. It can be h
 
 This tracking receiver had a kill switch on the side, a micro-SD card board for saving the packets of data just in case, and a coaxial connection out the top for an antenna to be connected to. For this project, I purchased a magentic antenna base that I attached attached to the top of my car so I could drive and track the balloon mid-flight:
 
-< INSERT PHOTO OF TRACKING RECEIVER INSTALLED ON MY CAR! >
+<img src=Reference-Photos/Antenna-On-Car-Example.jpg width='400'>
+
+I did zip-tie it to my luggage rack on the roof of my car just in case if it would've fallen off while driving, but it doesn't seem to have moved at all which was good!
 
 ## Tracking Receiver Arduino and MATLAB Code
 
@@ -184,7 +185,7 @@ The arduino code itself is pretty simple; it just waits until it receives a pack
 
 The [MATLAB code](Tracking-Reciever-MATLAB-Code-Folder) turned out to be simpler to create than I originally anticipated. It also takes in the packets of data, still in .csv format, and parses out each variable (interior temperature, exterior temperature, ambient pressure, latitude, longitude, altitude, and # of satellites). Then it specifically takes the latitude and longitude coordinates and plots them onto a geoplot. The plan for this was to have someone in the passenger seat of my car with a laptop and both the receiver code and MATLAB plotting code running. This way I could drive while they relay information was to where the balloon is drifting off to.
 
-<PUT IN BLURB ABOUT HOW THIS WORKED IN PRACTICE!>
+So to talk about how this worked in practice, I can sum it up in one simple word: terribly. After we launched the balloon and packed everyting back up in my car, we immediately drove after it with the receiver running on my computer and the antenna on top of my car. It worked for a bit, but once we got onto the highway we didn't get another packet of data. We kept driving hoping we would get more as we continued in the direction it was heading, but nothing. After we went a while without another packet, we decided to drive out where we estimated it to land in order to get a signal when it was coming back to Earth, but we still got nothing. And after driving around for 7 hours with no new packets of data, we called it quits and considered it lost.
 
 ## Launch Protocol
 
@@ -225,13 +226,91 @@ Then, after watching several videos on high-altitude balloon launches and coming
   22. Track the balloon and hopefully recover it.
   23. PROFIT!
 
-## Data Results
+## Launch Experience and Data Results
 
-Will fill once launch is conducted.
+We launched our balloon a little bit south west of Columbus, OH at a AERO RC Club on April 9th, 2024. Launching it went really well in my opinion and only took an hour from parking my car to launching the balloon and packing everything up with the help of our faculty advisor. Here are some of the photos we took of our launch:
+
+< INSERT A COUPLE LAUNCH PHOTOS >
+
+And so, with a ton of zip ties, electrical tape, paracord, and 110 cubic feet of helium, we were able to get a successful launch:
+
+https://github.com/BLawrence426/High-Altitude-Balloon-Senior-Capstone-Project/assets/157772655/674f84ac-60b6-4e0f-a145-dcf7288c7ae6
+
+Following this video being taken and a couple of more minutes of watching it drift away, we loaded up everything into my car and myself and a member of my team started driving after it. Like I mentioned in the previous section about our tracking receiver, it honestly failed as soon as we got out of Columbus. We immediately jumped onto I-70 which went straight east out of Columbus since that was the direction we were predicting the balloon to drift. We were getting packets of data right when the balloon lifted off and for a short period of driving, but shortly after we got onto the highway we lost contact with the balloon and were now in search and rescue mode. We ended up driving to east near Barnesville, OH, which is roughly where our balloon was predicited to land:
+
+< INSERT PICTURE OF ESTIMATED DROP ZONE >
+
+We got there roughly when it was supposed to land (about 1.5 hours following lift-off) and were scanning the local sky and checking our tracking receiver. After spending about 30 minutes in a remote, hilly farmland we decided to call it quits in that location and started to drive around hoping for a signal to make it to us. We spent an hour driving around a bunch of gravel backroads up and down the hilly terrain of eastern Ohio and came up with nothing. We decided to call it quits looking around this area and took county roads back to Columbus that more closely followed the estimated fightpath in-case the balloon happened to of prematurely burst. In all, we spent 7 hours directly after launching the balloon trying to located it before its battery died but came up short. At this point, we called it a loss which was dissapointing but we knew the rist we were taking.
+
+But this isn't where the story ends!
+
+I happened to purchase and put an Apple Air Tag in with the payload before launch on a whim. My mindset was that if we got close enough to the payload while trying to find it, I figured I could use my phone to play a sound in order to locate it quicker if it was stuck inside a bush or something. I knew that these Air Tags aren't worth their salt when it comes to trying to find something in the middle of nowhere due to them needing to connect to an apple device in order to project its location on the "Find My" App created by Apple. And after returning to The Ohio State's campus and taking a short nap (sorry, I was exhausted) I happened to check the app and saw it actually updated its location!
+
+< INSERT SCREENSHOT OF APPLE AIR TAG LOCATION >
+
+It moved!! I was so excited and my hope for trying to find it was off the charts. It followed the predicted path really close, but ended up drifting about 20 more miles eastward than we intended which would explain why we weren't able to either see it descent nor receive a packet of data. And thankfully, it appeared to land in the backyard of a couple of condos that shared a walking path in their backyard which would explain why it was able to connect to an Iphone relatively soon after it landed back onto the ground. So following this new information, I devised a plan to drive back out to eastern Ohio in order to find and recover it without needing to tresspass on anyones property. So following my Flght Testing course, I set off for my 2-hour journy to Saint Clairsville which the Air Tag was showing it was located at.
+
+When I finally arrived I did a quick loop on the road that overlooked the location it was showing to be and I swore I saw the yellow parachute on a bench near the walking path it was located. So then I eventually turned around in someones driveway and went down the road that the duplexes with the backyards in which our balloon payload was located in. I was extremely lucky that there were a couple of landscapers out tending to the grass and mulch beds that were kind enough to help me try and find it (I hope they enjoyed a beer or two on me from the card I left on their truck!). Myself and the first landscaper I talked to had a nice conversation while walking towards a bench alongside the walking path the Air Tag was showing its location at and, sure enough, someone happened to come across the payload and leave it on the bench. Though a bit wet from a thunderstorm that came through the previous night, the payload was fully intact except for the placard I put on the outside of the payload with my contact information which would explain why I never got a call or text despite someone comming across it:
+
+< INSERT PICTURE OF PLACARD >
+
+After thanking and saying goodbye to the landscaper that helped me find the payload, I first went to McDonalds to get something to eat (since I was too focused on finding the payload and didn't want to stop) and then went into a nearby parking lot in order to get the micro-SD cards out of the payload and check the data. Thankfully, everything seemed to be intact which was amazing! I gave it a once-over just to see what kind of results we got and then drove back to campus so I could look at all the data more closely.
+
+Upon further inspection, I noticed several things. Firstly, the balloon remained on until 3am on 4/10/24 which, if we were searching closer to this area, leads me to believe that we would've been able to find it via the radio. Secondly, there appeared to be about an hour gap in the data due to the GPS not connecting at the extremely high altitude (about 70-80,000 feet). In hindsight, it was stupid to code the payload to only record data if it had a GPS signal since it lead to a gap of data but oh well. This was only something I could've figured out with more experience in these components. But regardless of this issue, we still got some interesting data! The coolest of which is the coordinates the paylaod logged:
+
+<img src=MATLAB-Plots/MATLAB-Plot-of-Entire-Flight-Path-Zoomed-Out-Slightly-Less.png width='800'>
+
+So overall, the website we used to estimate the flight path was pretty close to the one the balloon actually followed which is incredible. Likewise, the balloon appeared to have preformed even better than intended since it drived about 20 miles further east than we expected. This leads us to believe that the balloon reached an altitude closer to 110,000 ft instead of the anticipated 100,000 ft. And speaking of which, these following two plots of both the GPS altitude and the pressure corresponding to the recorded pressures were created:
+
+< INSERT BOTH ALTITUDE PLOTS >
+
+The GPS altitude is definitely way, wayyyyy off from what was actually recorded. Honestly I don't know why since I would've assumed it would've been able to figure this out by the triangulation of the satellites it connected to but it apparently didn't. But thankfully, when looking at the recorded pressures and comparing that to standard atmosphere pressure tables, our altitude appears to be much more realistic and what we expected! The GPS altitude stated we only got to an altitude of 3,688.38 ft while the pressure tables returned a max altitude of 91,870.25 ft. We do believe the balloon went a bit higher than this altitude given the distance it drifted and the GPS cutting out at too high of an altitude.
+
+Likewise, we also collected both the interior and exterior temperature for plotting:
+
+< INSERT BOTH TEMPERATURE PLOTS >
+
+The interior temperature returned values that we expected on account of the handwarmer keeping the internal temperature of the payload within acceptable temperatures throughout the entire flight. Likewise, the interior temperature slowly decreased throughout the flight which makes sense due to the ambient temperature outside getting colder and colder which would've seeped into the inside of the payload. Furthermore, the exterior temperature appeared to be kind of skewed due to the handwarmer used to keep the payload electronics warm. We had to tuck our exterior temperature sensor between the styrofoam shell and outer bubblewrap layer which I believe caused the exterior temperature sensor to become warmed up by the handwarmer slowly warming the styrofoam shell. Despite this, we still saw a steep decrease in ambient temperature (minimum of 13.66°F) which was much, much colder than the ground temperature when we launched!
+
+And then finally, we also collected ambient pressure during the entire flight. We tried to do a small halo of tubing that connected to the pressure sensor in order to get a pressure reading at the top, side, and bottom of our payload in order to get an averaged pressure reading:
+
+< INSERT PRESSURE SENSOR DATA >
+
+The pressure data, despite the gap in data, shown the exact same trend that we were expecting from our simulations. It had a nice sort of parabolic shape to it and ended up having a minimum pressure of 0.23 psi (1585.79 Pascals) whichw as similar to what we were expecting before we launched which was great!
+
+Overall, we got a bunch of cool data from our launch and I am incredibly thankful that the Air Tag was able to save our project/payload from being completely lost. All the data collected lined up rather similarly to what we expected which was amazing for our hypothesis that we came up with at the beginning of the school year. I'm a bit dissapointed that the way our balloon payload was coded caused it to stop collecting data at high altitudes due to the GPS not getting a signal from any satellites, but I am happy that it worked for the most part! If I were to use this payload again as is, I would stick to a smaller balloon like a 100 or 200 gram balloon that would reach a slighly shorter altitude (about 30,000-40,000 ft) in order to prevent the GPS from disconnecting. And with proper changes to the code, I would run the payload again as is in order for it to collect data despite not having a GPS signal.
 
 ## Photo Results
 
-Will fill once launch is conducted.
+We got TONS of photos from our payload which I included all of them in the Raw Payload Photos folder. However, to save you time while also showing the coolest/funniest photos we got from the payload, I picked out a couple photos from the hundreds we got. Here are some of them along with a small description:
+
+#### First photo following launch
+
+#### First photo above the clouds (Ascent)
+
+#### Cool photo of the clouds (Ascent)
+
+#### Cool Descent photo 1
+
+#### Cool Descent photo 2
+
+#### Cool Descent photo 3
+
+#### Balloon swinging during descent photo
+
+#### First photo after landing
+
+#### Earth curvature photo 1
+
+#### Earth curvature photo 2
+
+#### Earth curvature photo 3
+
+#### Visitor photo 1
+
+#### Visitor photo 2
+
+#### Visitor photo 3
 
 ## Suggestions for Improvements
 
