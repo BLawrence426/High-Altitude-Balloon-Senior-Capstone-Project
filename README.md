@@ -10,7 +10,7 @@
 3. [Payload Construction](#user-content-payload-construction)
 4. [Payload Arduino Code](#user-content-payload-arduino-code)
 5. [Tracking Receiver Construction](#user-content-tracking-receiver-construction)
-6. [Tracking Receiver Arduino and MATLAB Code](#user-content-tracking-receiver-code)
+6. [Tracking Receiver Arduino and MATLAB Code](#user-content-tracking-receiver-arduino-and-matlab-code)
 7. [Launch Protocol](#user-content-launch-protocol)
 8. [Launch Experience and Data Results](#user-content-launch-experience-and-data-results)
 9. [Photo Results](#user-content-photo-results)
